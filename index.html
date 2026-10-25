@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="爪迹 Pawprint——记录宠物成长、健康与同城生活的温暖社区。">
+  <meta name="theme-color" content="#fffaf3">
+  <title>爪迹 Pawprint</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand" aria-label="爪迹 Pawprint">
+        <span class="brand-mark">🐾</span>
+        <div><strong>爪迹</strong><span>Pawprint</span></div>
+      </div>
+
+      <nav class="main-nav" aria-label="主要导航">
+        <button class="nav-item active" data-page="dashboard"><span>⌂</span>首页概览</button>
+        <button class="nav-item" data-page="pets"><span>♡</span>我的宠物</button>
+        <button class="nav-item" data-page="health"><span>＋</span>健康记录</button>
+        <button class="nav-item" data-page="timeline"><span>✦</span>成长时间线</button>
+        <button class="nav-item" data-page="community"><span>◌</span>同城宠友</button>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="note-icon">☀️</span>
+        <strong>今日小贴士</strong>
+        <p>秋天也要记得给毛孩子补充水分呀。</p>
+      </div>
+      <p class="local-badge">本地演示 · 数据仅保存在当前浏览器</p>
+    </aside>
+
+    <div class="mobile-bar">
+      <button class="icon-button" id="menuToggle" aria-label="打开导航">☰</button>
+      <div class="mobile-brand"><span>🐾</span> 爪迹 Pawprint</div>
+      <button class="avatar-mini" data-action="open-pet">🐶</button>
+    </div>
+
+    <main class="main-content">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow" id="pageEyebrow">PAWPRINT DAILY</p>
+          <h1 id="pageTitle">今天也要和毛孩子一起幸福生活 <span>🐾</span></h1>
+          <p class="page-subtitle" id="pageSubtitle">把每一次长大，都好好收藏。</p>
+        </div>
+        <div class="top-actions">
+          <span class="today-pill" id="todayText"></span>
+          <button class="profile-button" data-action="open-pet">
+            <span class="profile-avatar">🐶</span>
+            <span><strong id="topPetName">奶酪</strong><small>我的毛孩子</small></span>
+            <span class="chevron">›</span>
+          </button>
+        </div>
+      </div>
+
+      <section id="pageContent" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="关闭弹窗">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
